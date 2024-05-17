@@ -1,0 +1,79 @@
+.main .settings-avatar {
+    width: 120px;
+    height: 120px;
+    margin: 30px auto;
+}
+
+.main .avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+
+    object-fit: cover; /*图片填充*/
+    box-shadow: -3px -3px 0 1px #d1d9e6;
+
+    transition: 0.3s ease-in 0.15s;
+}
+
+.main .avatar:hover {
+    box-shadow: 7px 7px 4px 1px #d1d9e6;
+    transform: scale(1.01) translateY(-2px) translateX(-2px);
+}
+
+.main .settings-user {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    height: 200px;
+}
+
+
+.main .settings-user .user-info {
+    display: block;
+    margin: 30px 0;
+    height: 50px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    box-shadow: -4px -4px 1px 1px #d1d9e6;
+    transition: 0.3s ease-in 0.15s;
+}
+
+.main .settings-user .user-info:hover {
+    cursor: pointer;
+    box-shadow: 7px 7px 3px 1px #d1d9e6;
+    transform: scale(1.02) translateY(-2px) translateX(-2px);
+}
+
+
+.main .settings-user .user-info > label {
+    font-weight: bold;
+    color: #a0cfff;
+    margin: 0 10px;
+}
+
+.main .settings-user .user-info > input {
+    height: 100%;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.main .settings-user .user-info > input:focus {
+    outline: none;
+}
+
+.main .settings-user .username {
+    font-family: "Roboto Mono", monospace, sans-serif;
+    width: calc(100% - 80px);
+
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.main .settings-user .password {
+    width: calc(100% - 80px);
+    text-align: center;
+    font-size: 1.5rem;
+    background-color: #ffffff;
+}

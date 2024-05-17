@@ -1,0 +1,21 @@
+# PyCharm files
+.idea/
+
+# Compiled Python files
+*.pyc
+
+# Python virtual environment
+venv/
+
+# Flask-related cache and logs
+__pycache__/
+*.pyo
+*.pyd
+*.pyi
+*.pyz
+*.pyzw
+*.pycachefile
+
+# Other Flask-related files
+*.pydevproject
+*.db

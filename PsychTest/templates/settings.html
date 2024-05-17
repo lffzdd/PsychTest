@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/settings.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap">
+{% endblock %}
+
+{% block content %}
+    <div class="main">
+        <form class="settings-avatar" id="avatarForm" action="" method="post"
+              enctype="multipart/form-data">
+            <input type="hidden" name="action" value="avatar">
+            <img src="{{ avatar_url }}" id="avatar" alt="" class="avatar" width="100px">
+            <div style="display: none">
+                <input type="file" id="avatarInput" name="avatar" accept="image/*">
+            </div>
+        </form>
+
+        <form action="" method="post" class="settings-user" id="userForm">
+            <span class="user-info">
+                <label for="username">用户名</label>
+                <input type="text" id="username" name="username"
+                       value="{{ current_user.username }}" class="username">
+            </span>
+            <span class="user-info">
+                <label for="password">密&emsp;码 </label>
+                <input type="password" id="password" name="password"
+                       value="{{ current_user.password }}" class="password">
+            </span>
+        </form>
+        <button class="submit" type="submit" name="submit" style="margin: 30px 0">
+            <span>保存</span>
+        </button>
+
+    </div>
+
+
+{% endblock %}
+
+{% block script %}
+    <script>
+        const head = document.getElementById('header');
+        head.innerHTML = 'Settings';
+
+        // 点击头像触发文件选择
+        document.addEventListener('DOMContentLoaded', function () {
+            const avatar = document.getElementById('avatar');
+            const avatarInput = document.getElementById('avatarInput');
+            const avatarForm = document.getElementById('avatarForm');
+
+            avatar.addEventListener('click', function () {
+                avatarInput.click();
+            });
+
+            avatarInput.addEventListener('change', function () {
+                avatarForm.submit();
+            });
+        });
+
+        // 输入框获得焦点时改变父容器span样式，失去焦点时恢复
+        const userInfos = document.querySelectorAll('.user-info');
+        userInfos.forEach(function (userInfo) {
+            const input = userInfo.querySelector('input');
+            input.addEventListener('focus', function () {
+                userInfo.style.boxShadow = '7px 7px 3px 1px #d1d9e6';
+                userInfo.style.transform = 'translateY(-2px) translateX(-2px) scale(1.02)';
+            });
+            input.addEventListener('blur', function () {
+                userInfo.style.boxShadow = '-4px -4px 1px 1px #d1d9e6';
+                userInfo.style.transform = 'translateY(2px) translateX(2px) scale(1)';
+            });
+        });
+
+        // 点击保存按钮提交表单
+        const submit = document.getElementsByName('submit')[0];
+        const userForm = document.getElementById('userForm');
+        submit.addEventListener('click', function () {
+            userForm.submit();
+        });
+
+    </script>
+{% endblock %}

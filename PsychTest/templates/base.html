@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {# 网站图标 #}
+    <link rel="icon" href="{{ url_for('static',filename='images/favicon.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+    {#导航栏#}
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/sidebar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/font_sidebar/iconfont.css') }}">
+    {#登录注册#}
+
+    <title class="gradient-text">PsychTest</title>
+    {% for message in get_flashed_messages() %}
+        <div class="flash-message">{{ message }}</div>
+    {% endfor %}
+    {% block head %}{% endblock %}
+</head>
+<body>
+<header>
+    <h1 class="head" id="header"> Psych Test</h1>
+</header>
+
+{% include 'sidebar.html' %}
+
+{% block content %}{% endblock %}
+<footer>
+    <small>&copy; 2024 <a href="http://helloflask.com/book/3">刘非凡</a></small>
+</footer>
+</body>
+
+<script>
+    // 等待页面加载完成后执行
+    document.addEventListener('DOMContentLoaded', function () {
+        // 获取所有 flash 消息元素
+        var flashMessages = document.querySelectorAll('.flash-message');
+
+        // 遍历所有 flash 消息元素
+        flashMessages.forEach(function (flashMessage) {
+            // 添加点击事件处理程序
+            flashMessage.addEventListener('click', function () {
+                // 将 flash 消息元素从页面中移除
+                flashMessage.remove();
+            });
+        });
+    });
+
+</script>
+{% block script %}
+{% endblock %}
+
+</html>

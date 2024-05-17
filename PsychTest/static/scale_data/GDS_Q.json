@@ -1,0 +1,128 @@
+{
+  "title": "GDS",
+  "category": "抑郁症",
+  "introduction": "GDS由Brink等（1982）创制，是专用于老年人的抑郁筛查量表。在对老年人的临床评定上，它比其它抑郁量表有更高的符合率，在年纪较大的老人中这种优势更加明显。本量表主要适用于56岁以上人群。",
+  "score_info": "0-9分：无抑郁症；10-20分：轻度抑郁；21-30分：重度抑郁",
+  "content": {
+    "1": {
+      "question": "你对生活基本上满意吗？",
+      "is_reverse": "false"
+    },
+    "2": {
+      "question": "你是否已放弃了许多活动和兴趣？",
+      "is_reverse": "true"
+    },
+    "3": {
+      "question": "你是否感到生活空虚？",
+      "is_reverse": "true"
+    },
+    "4": {
+      "question": "你是否常感到厌倦？",
+      "is_reverse": "true"
+    },
+    "5": {
+      "question": "你觉得未来有希望吗？",
+      "is_reverse": "false"
+    },
+    "6": {
+      "question": "你是否因为脑子里一些想法摆脱不掉而烦恼？",
+      "is_reverse": "true"
+    },
+    "7": {
+      "question": "你是否大部分时间精力充沛？",
+      "is_reverse": "false"
+    },
+    "8": {
+      "question": "你是否害怕会有不幸的事落到你头上？",
+      "is_reverse": "true"
+    },
+    "9": {
+      "question": "你是否大部分时间感到幸福？",
+      "is_reverse": "false"
+    },
+    "10": {
+      "question": "你是否常感到孤立无援？",
+      "is_reverse": "true"
+    },
+    "11": {
+      "question": "你是否经常坐立不安，心烦意乱？",
+      "is_reverse": "true"
+    },
+    "12": {
+      "question": "你是否希望呆在家里而不愿去做些新鲜事？",
+      "is_reverse": "true"
+    },
+    "13": {
+      "question": "你是否常常担心将来？",
+      "is_reverse": "true"
+    },
+    "14": {
+      "question": "你是否觉得记忆力比以前差？",
+      "is_reverse": "true"
+    },
+    "15": {
+      "question": "你觉得现在活着很惬意吗？",
+      "is_reverse": "false"
+    },
+    "16": {
+      "question": "你是否常感到心情沉重、郁闷？",
+      "is_reverse": "true"
+    },
+    "17": {
+      "question": "你是否觉得象现在这样活着毫无意义？",
+      "is_reverse": "true"
+    },
+    "18": {
+      "question": "你是否总为过去的事忧愁？",
+      "is_reverse": "true"
+    },
+    "19": {
+      "question": "你觉得生活很令人兴奋吗？",
+      "is_reverse": "false"
+    },
+    "20": {
+      "question": "你开始一件新的工作很困难吗？",
+      "is_reverse": "true"
+    },
+    "21": {
+      "question": "你觉得生活充满活力吗？",
+      "is_reverse": "false"
+    },
+    "22": {
+      "question": "你是否觉得你的处境已毫无希望？",
+      "is_reverse": "true"
+    },
+    "23": {
+      "question": "你是否觉得大多数人比你强得多？",
+      "is_reverse": "true"
+    },
+    "24": {
+      "question": "你是否常为些小事伤心？",
+      "is_reverse": "true"
+    },
+    "25": {
+      "question": "你是否常觉得想哭？",
+      "is_reverse": "true"
+    },
+    "26": {
+      "question": "你集中精力有困难吗？",
+      "is_reverse": "true"
+    },
+    "27": {
+      "question": "你早晨起来很快活吗？",
+      "is_reverse": "false"
+    },
+    "28": {
+      "question": "你希望避开聚会吗？",
+      "is_reverse": "true"
+    },
+    "29": {
+      "question": "你做决定很容易吗？",
+      "is_reverse": "false"
+    },
+    "30": {
+      "question": "你的头脑象往常一样清晰吗？",
+      "is_reverse": "false"
+    }
+  }
+}

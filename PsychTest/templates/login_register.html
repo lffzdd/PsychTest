@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/font_login/iconfont.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/login_register.css') }}">
+    <style>
+        .head {
+            /* 强制页面顶部居中 */
+            position: absolute;
+            top: 0;
+            left: calc(50% - 120px);
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <div class="shell">
+        <div class="container a-container" id="a-container">
+            <form action="/register" method="post" class="form" id="a-form">
+                <input type="hidden" name="action" value="register">
+                <h2 class="form_title title">创建账号</h2>
+                <div class="form_icons">
+                    <i class="iconfont icon-QQ"></i>
+                    <i class="iconfont icon-weixin"></i>
+                    <i class="iconfont icon-bilibili-line"></i>
+                </div>
+                <span class="form_span">
+{#                    选择注册方式活电子邮箱注册#}
+                </span>
+                <input type="text" class="form_input" placeholder="Name" name="username">
+                <input type="password" class="form_input" placeholder="Password" name="password">
+                <button class="form_button button submit" type="submit" data-type="submit">SIGN UP</button>
+            </form>
+        </div>
+
+        <div class="container b-container" id="b-container">
+            <form action="/login" method="post" class="form" id="b-form">
+                <input type="hidden" name="action" value="login">
+                <h2 class="form_title title">登入账号</h2>
+                <div class="form_icons">
+                    <i class="iconfont icon-QQ"></i>
+                    <i class="iconfont icon-weixin"></i>
+                    <i class="iconfont icon-bilibili-line"></i>
+                </div>
+                <span class="form_span">
+{#                    选择登录方式活电子邮箱登录#}
+                </span>
+                <input type="text" class="form_input" placeholder="Name" name="username">
+                <input type="password" class="form_input" placeholder="Password" name="password">
+{#                <a class="form_link">忘记密码？</a>#}
+                <button class="form_button button submit" type="submit" data-type="submit">SIGN IN</button>
+            </form>
+        </div>
+
+        <div class="switch" id="switch-cnt">
+            <div class="switch_circle"></div>
+            <div class="switch_circle switch_circle-t"></div>
+            <div class="switch_container" id="switch-c1">
+                <h2 class="switch_title title" style="letter-spacing: 0;">Welcome Back！</h2>
+                <p class="switch_description description">已经有账号了嘛，去登入吧！！！</p>
+                <button class="switch_button button switch-btn" data-type="switch">SIGN IN</button>
+            </div>
+
+            <div class="switch_container is-hidden" id="switch-c2">
+                <h2 class="switch_title title" style="letter-spacing: 0;">Hello Friend！</h2>
+                <p class="switch_description description">去注册一个账号，踏入心理的旅途！</p>
+                <button class="switch_button button switch-btn" data-type="switch">SIGN UP</button>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+{% block script %}
+    <script>
+        let switchCtn = document.querySelector("#switch-cnt");
+        let switchC1 = document.querySelector("#switch-c1");
+        let switchC2 = document.querySelector("#switch-c2");
+        let switchCircle = document.querySelectorAll(".switch_circle");
+        let submitButtons = document.querySelectorAll(".submit[data-type='submit']");
+        let switchBtn = document.querySelectorAll(".switch-btn[data-type='switch']");
+        let aContainer = document.querySelector("#a-container");
+        let bContainer = document.querySelector("#b-container");
+
+        let changeForm = () => {
+            switchCtn.classList.add("is-gx");
+            setTimeout(function () {
+                switchCtn.classList.remove("is-gx");
+            }, 1500)
+            switchCtn.classList.toggle("is-txr");
+            switchCircle[0].classList.toggle("is-txr");
+            switchCircle[1].classList.toggle("is-txr");
+
+            switchC1.classList.toggle("is-hidden");
+            switchC2.classList.toggle("is-hidden");
+            aContainer.classList.toggle("is-txl");
+            bContainer.classList.toggle("is-txl");
+            bContainer.classList.toggle("is-z");
+        }
+
+        // 点击切换按钮执行切换函数
+        for (var i = 0; i < switchBtn.length; i++) {
+            switchBtn[i].addEventListener("click", changeForm);
+        }
+
+        // 点击提交按钮时不阻止默认行为
+        for (var i = 0; i < submitButtons.length; i++) {
+            submitButtons[i].addEventListener("click", function () {
+                this.closest("form").submit();
+            });
+        }
+
+    </script>
+{% endblock %}

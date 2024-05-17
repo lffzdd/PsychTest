@@ -1,0 +1,109 @@
+{#侧边导航栏#}
+
+<nav class="menu">
+    {# 呼出栏 #}
+    <div class="actionsBar">
+        <div>
+            <button id="menuBtn" type="button">
+                <i class="iconfont icon-hanbaocaidan"></i>
+            </button>
+            <h3 class="menuText">PsychTest</h3>
+        </div>
+    </div>
+    {# 选项栏 #}
+    <ul class="optionsBar">
+        {# 首页按钮 #}
+        <li class="menuItem">
+            <a href="{{ url_for('index') }}" class="menuOption">
+                <i class="iconfont icon-shouye"></i>
+                <h5 class="menuText" style="text-align: center">首页</h5>
+            </a>
+        </li>
+        {# 分割线 #}
+        <li class="menuBreak">
+            <hr>
+        </li>
+        {# 选项按钮1 #}
+        <li class="menuItem">
+            {#  如果登录了，跳转到历史记录页面 #}
+            {#  如果未登录，跳转到登录页面 #}
+            {% if current_user.is_authenticated %}
+                {% set history_url=url_for('history',username=current_user.username) %}
+            {% else %}
+                {% set history_url=url_for('login') %}
+            {% endif %}
+            <form action='{{ history_url }}' class="menuOption">
+                <button class="menuOption" type="submit">
+                    <i class="iconfont icon-tupian"></i>
+                    <h5 class="menuText">历史记录</h5>
+                </button>
+            </form>
+        </li>
+    </ul>
+    {# 关于栏，显示空白 #}
+    <div class="about" id="about"></div>
+    {# 用户栏 #}
+    <div class="menuUser">
+        {% if current_user.is_authenticated %}
+            {% set user_url=url_for('settings',username=current_user.username) %}
+        {% else %}
+            {% set user_url=url_for('login') %}
+        {% endif %}
+        <a href="{{ user_url }}">
+            <div>
+                {% if current_user.is_authenticated %}
+                    <img src="{{ current_user.avatar }} " alt="">
+                {% else %}
+                    <img src="{{ url_for('static',filename='images/avatars/default_avatar.jpg') }}" alt="">
+                {% endif %}
+            </div>
+            <h5 class="menuText Username" style="text-align: center">
+                {% if current_user.is_authenticated %}
+                    {{ user.username }}
+                {% else %}
+                    未登录
+                {% endif %}
+            </h5>
+            <p class="menuText">
+                <i class="iconfont icon-youjiantou"></i>
+            </p>
+        </a>
+    </div>
+    {# 退出按钮 #}
+    <div class="themeBar">
+        <div>
+            {# 实现退出登录的隐藏表单 #}
+            {% if current_user.is_authenticated %}
+                {% set logout_url=url_for('logout') %}
+            {% else %}
+                {% set logout_url=url_for('login') %}
+            {% endif %}
+            {#            <form id="logoutForm" action="{{ logout_url }}" method="post" >#}
+            {#                <button type="submit" id="logoutButton">#}
+            {#                    <i class="iconfont icon-tuichu"></i>#}
+            {#                </button>#}
+            {#            </form>#}
+            <a href="{{ logout_url }}">
+                <i class="iconfont icon-tuichu"></i>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<script>
+    const menuBtn = document.getElementById('menuBtn');
+    const menu = document.querySelector('.menu');
+    const menuText = document.querySelectorAll('.menuText');
+    menuBtn.addEventListener('click', () => {
+        menu.classList.toggle('open');
+        menuText.forEach(function (text, index) {
+            setTimeout(() => {
+                text.classList.toggle('open2');
+            }, index * 50);
+        });
+    });
+    {# 点击退出登录 #}
+    document.getElementById('logoutButton').addEventListener('click', function () {
+        document.getElementById('logoutForm').submit();  // 提交表单
+    });
+</script>

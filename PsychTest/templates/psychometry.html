@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/catalogue.css') }}">
+{% endblock %}
+{% block content %}
+    <form class="main" method="post" action="">
+        {% for question_index,question in questions %}
+            <div class="question-box" id="{{ question_index }}">
+                {# 问题 #}
+                <div class="question">
+                    <span class="question-id">{{ question_index }}</span>
+                    {{ question }}
+                </div>
+                {# 选项 #}
+                <div class="question-options">
+                        {% for option_index,option in options %}
+                            {% set id = question_index ~ '-' ~ option_index %}
+                            <label class="option" for="{{ id }}">
+                                <input type="radio"{#  设置name为题目序号 #}
+                                       name="{{ question_index }}"
+                                       value="{{ option.score }}" id="{{ id }}"
+                                        {% if question_index in selected_options_score and selected_options_score[question_index]==option.score %}
+                                       checked
+                                        {% endif %}
+                                >
+                                {{ option.content }}
+                            </label>
+                        {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+        <input type="hidden" name="action" value="submit">
+        <button class="submit" type="submit" name="submit">
+            <span>
+                {% if is_history %}
+                    保存
+                {% else %}
+                    提交
+                {% endif %}
+            </span>
+        </button>
+    </form>
+
+    {# 目录 #}
+    <div class="catalogue" id="catalogue">
+        <span class="catalogue-title">目录</span>
+        <ul class="ul-no-style ">
+            {% for question_index,question in questions %}
+                <li>
+                    <a href="#{{ question_index }}">{{ question_index }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    {# 评分信息 #}
+    <div class="score-info">
+        <span class="score-info-title">评分</span>
+        <div class="info">
+            {{ scale.score_info }}
+        </div>
+        {% if current_user.is_authenticated %}
+            <div class="update-time">
+                {% if is_history %}
+                    <span>最近更新时间 </span>
+                    <br>
+                    <p>{{ updated_time }}</p>
+                {% else %}
+                    <a href="{{ url_for('history_scale',username=current_user.username,scale_id=scale.id) }}">查看历史记录</a>
+                {% endif %}
+            </div>
+        {% endif %}
+        <div class="score">
+            {% if is_finished %}
+                {% if is_history %}
+                    历史得分
+                {% else %}
+                    当前得分
+                {% endif %}
+                ：<span>{{ scores }}</span>
+            {% else %}
+                量表尚未完成！
+            {% endif %}
+        </div>
+    </div>
+
+{% endblock %}
+{% block script %}
+    <script>
+        //获取header
+        const header = document.getElementById('header');
+        //改为当前量表的标题
+        header.innerHTML = '{{ scale.title }}';
+
+        //鼠标悬停在目录上时，目录获得焦点，离开时失去焦点
+        const catalogue = document.getElementById('catalogue');
+        catalogue.addEventListener(('mouseover'), () => {
+            catalogue.focus();
+        })
+        catalogue.addEventListener(('mouseleave'), () => {
+            catalogue.blur();
+        })
+
+        //滚动时，目录跟随滚动
+        const questions = document.querySelectorAll('.question-box');
+        window.addEventListener('scroll', () => {
+            let currentQuestion = null;
+
+            questions.forEach(question => {
+                const rect = question.getBoundingClientRect();//获取元素的位置
+                //元素高度为150px,当元素位于页面中间150px范围内，视为当前问题
+                if (rect.top < window.innerHeight / 2 && rect.bottom > window.innerHeight / 2 - 20) {
+                    const currentCatalogueItem = document.querySelector(`a[href="#${question.id}"]`);
+
+                    //移动目录到当前问题
+                    currentCatalogueItem.scrollIntoView({behavior: 'smooth', block: 'center'});
+
+                    //添加hover样式
+                    currentCatalogueItem.classList.add('catalogue-a-hover');
+                    //font-size不能继承，因为
+                    currentCatalogueItem.style.fontSize = '35px';
+                } else {
+                    //取消hover样式
+                    const otherCatalogueItem = document.querySelector(`a[href="#${question.id}"]`);
+                    otherCatalogueItem.classList.remove('catalogue-a-hover');
+                    otherCatalogueItem.style.fontSize = '20px';
+                }
+
+            })
+        })
+
+    </script>
+{% endblock %}
+

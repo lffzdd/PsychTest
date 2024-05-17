@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="main">
+        {# 导入所有量表 #}
+        {% for scale in scales %}
+            {% if is_history %}
+                {% set route = url_for('history_scale',scale_id=scale.id,username=current_user.username) %}
+            {% else %}
+                {% set route = url_for('psychometry',scale_id=scale.id) %}
+            {% endif %}
+            <a href="{{ route }}" class="scale">
+                <ul class="ul-no-style">
+                    <li class="title">
+                        {{ scale.title }}
+                        <span class="category">{{ scale.category }}</span>
+                    </li>
+                    <li>
+                        <hr class="splitter">
+                    </li>
+                    <li class="introduction">
+                        <span>></span>
+                        {{ scale.introduction }}
+                    </li>
+                </ul>
+            </a>
+        {% endfor %}
+
+
+    </div>
+{% endblock %}
+
+{% block script %}
+    {% if  is_history %}
+        <script>
+            //获取header
+            const header = document.getElementById('header');
+            //改为历史记录
+            header.innerHTML = '{{ current_user.username }} 的历史记录';
+        </script>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,208 @@
+{
+  "title": "PSTR",
+  "category": "其它",
+  "introduction": "PSTR心理压力测试由瑞士心理学家爱德沃兹于1983年编制,以德国心理学家穆瑞在1968年提出的心理压力因素理论为基础。适度的压力有助于提高工作或者学习效率，但过度的压力会使得效果适得其反，严重的时候会影响身体健康。",
+  "score_info": "总分＜43分：压力较低；43-65分：压力适中；＞65分：压力过大",
+  "content": {
+    "1 ": {
+      "question": "我受背部疼痛之苦",
+      "is_reverse": "false"
+    },
+    "2 ": {
+      "question": "我的睡眠不足,且睡不安稳",
+      "is_reverse": "false"
+    },
+    "3 ": {
+      "question": "我头部疼痛",
+      "is_reverse": "false"
+    },
+    "4 ": {
+      "question": "若须等候,我会不安",
+      "is_reverse": "false"
+    },
+    "5 ": {
+      "question": "我的后颈感到疼痛",
+      "is_reverse": "false"
+    },
+    "6 ": {
+      "question": "我比多数人更神经紧张",
+      "is_reverse": "false"
+    },
+    "7 ": {
+      "question": "我很难入睡",
+      "is_reverse": "false"
+    },
+    "8 ": {
+      "question": "我的头感到紧或疼",
+      "is_reverse": "false"
+    },
+    "9 ": {
+      "question": "我的胃有病",
+      "is_reverse": "false"
+    },
+    "10": {
+      "question": "我对自己没有信心",
+      "is_reverse": "false"
+    },
+    "11": {
+      "question": "我对自己说话",
+      "is_reverse": "false"
+    },
+    "12": {
+      "question": "我忧虑财务问题",
+      "is_reverse": "false"
+    },
+    "13": {
+      "question": "与人见面时,我会窘怯",
+      "is_reverse": "false"
+    },
+    "14": {
+      "question": "我怕发生可怕的事",
+      "is_reverse": "false"
+    },
+    "15": {
+      "question": "白天我觉得累",
+      "is_reverse": "false"
+    },
+    "16": {
+      "question": "下午我感到喉咙痛,但并非由于染上感冒",
+      "is_reverse": "false"
+    },
+    "17": {
+      "question": "我心情不安,无法静坐",
+      "is_reverse": "false"
+    },
+    "18": {
+      "question": "我感到非常口干",
+      "is_reverse": "false"
+    },
+    "19": {
+      "question": "我心脏有病",
+      "is_reverse": "false"
+    },
+    "20": {
+      "question": "我觉得自己不是很有用",
+      "is_reverse": "false"
+    },
+    "21": {
+      "question": "我吸烟",
+      "is_reverse": "false"
+    },
+    "22": {
+      "question": "我肚子不舒服",
+      "is_reverse": "false"
+    },
+    "23": {
+      "question": "我觉得不快乐",
+      "is_reverse": "false"
+    },
+    "24": {
+      "question": "我流汗",
+      "is_reverse": "false"
+    },
+    "25": {
+      "question": "我喝酒",
+      "is_reverse": "false"
+    },
+    "26": {
+      "question": "我很自觉",
+      "is_reverse": "false"
+    },
+    "27": {
+      "question": "我觉得自己像四分五裂",
+      "is_reverse": "false"
+    },
+    "28": {
+      "question": "我的眼睛又酸又累",
+      "is_reverse": "false"
+    },
+    "29": {
+      "question": "我的腿或脚抽筋",
+      "is_reverse": "false"
+    },
+    "30": {
+      "question": "我的心跳过速",
+      "is_reverse": "false"
+    },
+    "31": {
+      "question": "我怕结识人",
+      "is_reverse": "false"
+    },
+    "32": {
+      "question": "我有十二指肠溃疡病",
+      "is_reverse": "false"
+    },
+    "33": {
+      "question": "我的手脚冰冷",
+      "is_reverse": "false"
+    },
+    "34": {
+      "question": "我患便秘",
+      "is_reverse": "false"
+    },
+    "35": {
+      "question": "我未经医师指示使用各种药",
+      "is_reverse": "false"
+    },
+    "36": {
+      "question": "我发现自己很容易哭",
+      "is_reverse": "false"
+    },
+    "37": {
+      "question": "我消化不良",
+      "is_reverse": "false"
+    },
+    "38": {
+      "question": "我咬指甲",
+      "is_reverse": "false"
+    },
+    "39": {
+      "question": "我耳中有嗡嗡声",
+      "is_reverse": "false"
+    },
+    "40": {
+      "question": "我小便频密",
+      "is_reverse": "false"
+    },
+    "41": {
+      "question": "我有胃溃疡",
+      "is_reverse": "false"
+    },
+    "42": {
+      "question": "我有皮肤方面的病",
+      "is_reverse": "false"
+    },
+    "43": {
+      "question": "我的咽喉很紧",
+      "is_reverse": "false"
+    },
+    "44": {
+      "question": "我发现很难做决定",
+      "is_reverse": "false"
+    },
+    "45": {
+      "question": "我担心我的工作",
+      "is_reverse": "false"
+    },
+    "46": {
+      "question": "我口腔溃烂",
+      "is_reverse": "false"
+    },
+    "47": {
+      "question": "我为琐事忧虑",
+      "is_reverse": "false"
+    },
+    "48": {
+      "question": "我呼吸浅促",
+      "is_reverse": "false"
+    },
+    "49": {
+      "question": "我觉得胸部紧迫",
+      "is_reverse": "false"
+    },
+    "50": {
+      "question": "我很难作出决定",
+      "is_reverse": "false"
+    }
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "title": "SAS",
+  "category": "焦虑症",
+  "introduction": "SAS由教授Zung编制（1971），从量表构造的形式到具体评定的方法，都与抑郁自评量表(SDS)十分相似，是一种分析病人主观症状的相当简便的临床工具。由于焦虑是心理咨询门诊中较常见的一种情绪障碍，所以近年来SAS是咨询门诊中了解焦虑症状的常用量表。",
+  "score_info": "总分＜39分：无焦虑；40-47分：轻度焦虑；48-55分：中度焦虑；≥56分：重度焦虑",
+  "content": {
+    "1": {
+      "question": "我觉得比平常容易紧张和着急",
+      "is_reverse":"false"
+    },
+    "2": {
+      "question": "我无缘无故地感到害怕",
+      "is_reverse":"false"
+    },
+    "3": {
+      "question": "我容易心里烦乱或觉得惊恐",
+      "is_reverse":"false"
+    },
+    "4": {
+      "question": "我觉得",
+      "is_reverse":"false"
+    },
+    "5": {
+      "question": "我可能将要发疯",
+      "is_reverse":"true"
+    },
+    "6": {
+      "question": "我觉得一切都很好，也不会发生什么不幸",
+      "is_reverse":"false"
+    },
+    "7": {
+      "question": "我手脚发抖打颤",
+      "is_reverse":"false"
+    },
+    "8": {
+      "question": "我因为头痛、颈痛和背痛而苦恼",
+      "is_reverse":"false"
+    },
+    "9": {
+      "question": "我感觉容易衰弱和疲乏",
+      "is_reverse":"true"
+    },
+    "10": {
+      "question": "我觉得心平气和，并且容易安静坐着.",
+      "is_reverse":"false"
+    },
+    "11": {
+      "question": "我觉得心跳很快.",
+      "is_reverse":"false"
+    },
+    "12": {
+      "question": "我因为一阵阵头晕而苦恼.",
+      "is_reverse":"false"
+    },
+    "13": {
+      "question": "我有晕倒发作或觉得要晕倒似的.",
+      "is_reverse":"true"
+    },
+    "14": {
+      "question": "我呼气吸气都感到很容易.",
+      "is_reverse":"false"
+    },
+    "15": {
+      "question": "我手脚麻木和刺痛.",
+      "is_reverse":"false"
+    },
+    "16": {
+      "question": "我因为胃痛和消化不良而苦恼.",
+      "is_reverse":"false"
+    },
+    "17": {
+      "question": "我常常要小便.",
+      "is_reverse":"true"
+    },
+    "18": {
+      "question": "我的手常常是干燥温暖的.",
+      "is_reverse":"false"
+    },
+    "19": {
+      "question": "我脸红发热.",
+      "is_reverse":"true"
+    },
+    "20": {
+      "question": "我容易入睡并且一夜睡得很好.我做恶梦",
+      "is_reverse":"false"
+    }
+  }
+}
