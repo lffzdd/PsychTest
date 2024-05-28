@@ -248,7 +248,7 @@ def history_scale(username, scale_id):
                     record.update_time = db.func.now()
                 else:
                     record = Record(user_id=current_user.id, scale_id=scale_id, question_id=question.id,
-                                    selected_option=value)
+                                    selected_option_score=value)
                     db.session.add(record)
             else:  # 如果表单中没有该题目的选项值，从数据库中获取选项值
                 value = selected_options_score.get(question_index)

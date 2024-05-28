@@ -35,7 +35,7 @@ def init_scale(file_question, file_option):
         options = json.load(file_option)
         print(questions)
         print(options)
-    #
+
     title = questions['title']
     category = questions['category']
     introduction = questions['introduction']
