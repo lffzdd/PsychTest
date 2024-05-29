@@ -4,7 +4,7 @@ import click
 import json
 
 from PsychTest import app, db
-from PsychTest.models import User, PsychometricScale, Record, Question, Option
+from PsychTest.models import PsychometricScale, Question, Option
 
 
 @app.cli.command('init-db')

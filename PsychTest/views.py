@@ -1,6 +1,7 @@
 import os
+from datetime import datetime
 
-from flask import render_template, request, flash, redirect, url_for, jsonify, session
+from flask import render_template, request, flash, redirect, url_for, jsonify
 from flask_login import logout_user, login_required, current_user, login_user
 from werkzeug.exceptions import BadRequestKeyError
 from werkzeug.utils import secure_filename
@@ -169,7 +170,7 @@ def psychometry(scale_id):
 
                     if record:  # 若用户已经回答过该题目，则更新记录
                         record.selected_option_score = value
-                        record.update_time = db.func.now()
+                        record.update_time = datetime.now().replace(microsecond=0)
                     else:  # 若用户未回答过该题目，则新建记录
                         record = Record(user_id=current_user.id, scale_id=scale_id, question_id=question.id,
                                         selected_option_score=value)
@@ -245,7 +246,7 @@ def history_scale(username, scale_id):
                                                 question_id=question.id).first()
                 if record:
                     record.selected_option_score = value
-                    record.update_time = db.func.now()
+                    record.update_time = datetime.now().replace(microsecond=0)
                 else:
                     record = Record(user_id=current_user.id, scale_id=scale_id, question_id=question.id,
                                     selected_option_score=value)

@@ -1,4 +1,4 @@
-import os
+from datetime import datetime
 
 from flask_login import UserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -70,5 +70,5 @@ class Record(db.Model):
     # option_id = db.Column(db.Integer, db.ForeignKey('option.id'), nullable=False)
     selected_option_score = db.Column(db.Integer, nullable=False)
     # 精确到分钟的时间戳，在插入数据时使用 datetime.datetime.now() 获取当前时间
+    update_time = db.Column(db.DateTime, index=True, default=datetime.now().replace(microsecond=0), nullable=False)
     # index=True 为该列创建索引，提高查询效率
-    update_time = db.Column(db.DateTime, index=True, default=db.func.now(), nullable=False)
